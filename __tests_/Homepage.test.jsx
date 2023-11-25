@@ -11,4 +11,19 @@ describe('Home Page - Rendering', () => {
     render(<Home/>)
     expect(screen.getByRole("button", { name: "Click Here" })).toBeInTheDocument();
   });
+
+  it('should have input field with label Enter Random Text', () => {
+    render(<Home/>)
+    // expect(screen.getByRole("textbox")).toBeInTheDocument(); with role
+    expect(screen.getByLabelText(/Enter any text/)).toBeInTheDocument() //with label
+  })
+  it('should have input field with placeholder Search', () => {
+    render(<Home/>)
+    expect(screen.getByPlaceholderText(/Search/)).toBeInTheDocument();
+  })
+  it('should have input field by display value', () => {
+    render(<Home/>)
+    screen.getByDisplayValue(/Arsenal/)
+    
+  })
 });
