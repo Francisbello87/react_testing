@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import UserProfile from "./components/UserProfile";
 
 export default function Home() {
   const [showText, setShowText] = useState(false);
@@ -18,7 +19,7 @@ export default function Home() {
       <div className=" mt-4 text-black">
         <input value="Arsenal FC" />
       </div>
-      <div className=" flex gap-4 justify-start mt-5">
+      <div className=" flex gap-4 justify-start my-5">
         {showText && <span>This is the text!</span>}
         <button
           className="bg-gray-600"
@@ -31,6 +32,13 @@ export default function Home() {
           Show Text
         </button>
       </div>
+
+      <UserProfile
+        displayName={"Legolas"}
+        username="Francis"
+        email="francis@francis.com"
+        isEmailVerified={false}
+      />
     </main>
   );
 }
