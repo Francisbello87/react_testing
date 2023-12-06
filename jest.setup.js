@@ -5,8 +5,15 @@ beforeAll(() => {
     server.listen()
 })
 
-afterEach(() => {
-    server.resetHandlers()
-})
+beforeEach(() => {})
 
-afterAll(() => {})
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => {
+    server.close()
+});
+
+
+
