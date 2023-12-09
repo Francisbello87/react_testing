@@ -10,8 +10,14 @@ const createJestConfig = nextJest({
 const config = {
   // Add more setup options before each test is run
   setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
-  resolver: "jest-resolve/node",
-  // testEnvironment: "jest-environment-jsdom",
+  // setupFiles: ["./jest.polyfills.js"],
+  // resolver: "jest-resolve/node",
+  // testEnvironment: "node",
+  testEnvironment: "jest-environment-jsdom",
+  testEnvironment: "jsdom",
+  testEnvironmentOptions: {
+    customExportConditions: [""],
+  },
 };
 
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async

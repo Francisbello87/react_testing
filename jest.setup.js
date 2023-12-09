@@ -1,5 +1,13 @@
 import "@testing-library/jest-dom";
-import {server} from '@/mocks/server'
+import 'whatwg-fetch';
+import {server} from '@/mocks/server';
+
+// import { TextEncoder, TextDecoder } from "text-encoding";
+// import "web-streams-polyfill";
+
+// global.TextEncoder = TextEncoder;
+// global.TextDecoder = TextDecoder;
+// import { worker } from "@/mocks/server";
 
 beforeAll(() => {
     server.listen()

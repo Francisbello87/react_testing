@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req) {
   return NextResponse.json([
     {
       id: 1,
@@ -17,4 +17,3 @@ export async function GET() {
   ]);
 }
 
-export async function POST() {}
